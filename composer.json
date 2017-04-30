@@ -1,0 +1,19 @@
+{
+    "name": "development-x/currency2text",
+    "description": "Convert amount to words",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zlatin Hristov",
+            "email": "zlatko.2create@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "files": ["lib/CurrencyConverter.php"]
+    },
+    "require": {
+        "php": ">=5.3"
+    }
+}
