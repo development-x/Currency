@@ -76,11 +76,11 @@ class Currency
     {
 
         switch (true) {
-            case $value === 0 :
+            case $value === 0:
                 return "";
             case isset(self::$trans[self::$lang][$value]) :
                 return self::$trans[self::$lang][$value];
-            case $value < 100 :
+            case $value < 100:
                 $module = $value % 10;
                 $division = floor($value / 10);
                 if (self::LANG_BG === self::$lang) {
@@ -92,7 +92,7 @@ class Currency
                 } else {
                     return self::$trans[self::$lang][$value - $module] . '-' . self::$trans[self::$lang][$module];
                 }
-            case $value < 1000 :
+            case $value < 1000:
                 $module = $value % 100;
                 $division = floor($value / 100);
                 $and = $module <= 20 || $module % 10 === 0 ? self::$trans[self::$lang]['and'] : ' ';
@@ -101,16 +101,16 @@ class Currency
                 } else {
                     return self::$trans[self::$lang][$division] . ' ' . self::$trans[self::$lang]['hundreds'] . $and . self::normalize($module);
                 }
-            case $value < 1000000 :
+            case $value < 1000000:
                 $module = $value % 1000;
                 $division = $value / 1000;
                 return self::normalize($division) . ' ' . self::$trans[self::$lang]['thousands'] . ' ' . self::normalize($module);
-            case $value < 1000000000 :
+            case $value < 1000000000:
                 $module = $value % 1000000;
                 $division = $value / 1000000;
                 $millions = floor($value / 1000000);
                 return self::normalize($division) . ' ' . ($millions == 1 ? self::$trans[self::$lang]['million'] : self::$trans[self::$lang]['millions']) . ' ' . self::normalize($module);
-            default :
+            default:
                 throw new InvalidArgumentException("$value is greeater than 1000000000");
         }
     }
