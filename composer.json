@@ -1,19 +1,27 @@
 {
-    "name": "development-x/currency2text",
-    "description": "Convert amount to words",
+    "name": "development-x/currency",
+    "description": "Convert amount <=> words",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Zlatin Hristov",
-            "email": "zlatko.2create@gmail.com"
+            "email": "about@z-latko.info",
+            "homepage": "https://z-latko.info"
+        },
+        {
+            "name": "DevX Ltd",
+            "homepage": "https://devx.info"
         }
     ],
     "minimum-stability": "stable",
     "autoload": {
-        "files": ["lib/CurrencyConverter.php"]
+        "files": ["lib/Currency.php"]
     },
     "require": {
         "php": ">=5.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.7"
     }
 }
