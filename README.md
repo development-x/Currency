@@ -6,3 +6,36 @@
 | Packagist |
 | --- |
 | [![Packagist](https://img.shields.io/packagist/dt/development-x/Currency.svg)](https://github.com/development-x/Currency) [![Packagist](https://img.shields.io/packagist/l/development-x/Currency.svg)](https://github.com/development-x/Currency) [![Packagist Pre Release](https://img.shields.io/packagist/vpre/development-x/Currency.svg)](https://github.com/development-x/Currency) [![Packagist Pre Release](https://img.shields.io/hhvm/development-x/Currency.svg)](https://github.com/development-x/Currency) |
+
+
+## Currency class
+Basic currency features - convert amount to words
+
+## Requirements
+------------
+
+ * PHP 5.5+
+
+## Installation
+------------
+Install with [Composer](http://packagist.org), run:
+
+```sh
+composer require development-x/media-service-provider
+```
+
+## Use it
+```php
+<?php
+
+echo Currency::convertAmountToText(1.23, Currency::LANG_BG);
+echo Currency::convertAmountToText(1.23, Currency::LANG_EN);
+
+```
+
+## ToDo
+- [ ] Add more functionality
+- [ ] Add more unit tests
+
+## Contributing
+However, if you are interested and want to send a bug fix, new functionality or better realization, just send a pull request .
