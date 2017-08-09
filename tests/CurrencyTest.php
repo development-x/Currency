@@ -29,8 +29,8 @@ class CurrencyTest extends \PHPUnit_Framework_TestCase
         );
 
         foreach ($amounts AS $amount => $translation) {
-            $this->assertEquals($translation['bg'], Currency::convertToText($amount, Currency::LANG_BG));
-            $this->assertEquals($translation['en'], Currency::convertToText($amount, Currency::LANG_EN));
+            $this->assertEquals($translation['bg'], Currency::normalize($amount, Currency::LANG_BG));
+            $this->assertEquals($translation['en'], Currency::normalize($amount, Currency::LANG_EN));
         }
     }
 
@@ -39,7 +39,7 @@ class CurrencyTest extends \PHPUnit_Framework_TestCase
      */
     public function testCurrencyException()
     {
-        Currency::convertToText(1.03, 'es');
+        Currency::normalize(1.03, 'es');
     }
 
 }

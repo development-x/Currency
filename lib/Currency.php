@@ -27,7 +27,7 @@ class Currency
      * 
      * @throws Exception
      */
-    public static function convertToText($amount, $lang = self::LANG_BG)
+    public static function normalize($amount, $lang = self::LANG_BG)
     {
 
         self::$lang = $lang;

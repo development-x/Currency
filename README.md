@@ -28,8 +28,8 @@ composer require development-x/media-service-provider
 ```php
 <?php
 
-echo Currency::convertAmountToText(1.23, Currency::LANG_BG);
-echo Currency::convertAmountToText(1.23, Currency::LANG_EN);
+echo Currency::normalize(1.23, Currency::LANG_BG);
+echo Currency::normalize(1.23, Currency::LANG_EN);
 
 ```
 
