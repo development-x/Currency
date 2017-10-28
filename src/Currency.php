@@ -1,4 +1,5 @@
 <?php
+namespace Util;
 
 class Currency
 {
@@ -37,7 +38,7 @@ class Currency
         }
 
         if (!isset(self::$trans[self::$lang])) {
-            throw new InvalidArgumentException('Invalid lang specified');
+            throw new \InvalidArgumentException('Invalid lang specified');
         }
         
         if (strchr($amount, '.')) {
@@ -78,7 +79,7 @@ class Currency
         switch (true) {
             case $value === 0:
                 return "";
-            case isset(self::$trans[self::$lang][$value]) :
+            case isset(self::$trans[self::$lang][$value]):
                 return self::$trans[self::$lang][$value];
             case $value < 100:
                 $module = $value % 10;
@@ -111,7 +112,7 @@ class Currency
                 $millions = floor($value / 1000000);
                 return self::normalize($division) . ' ' . ($millions == 1 ? self::$trans[self::$lang]['million'] : self::$trans[self::$lang]['millions']) . ' ' . self::normalize($module);
             default:
-                throw new InvalidArgumentException("$value is greeater than 1000000000");
+                throw new \InvalidArgumentException("$value is greeater than 1000000000");
         }
     }
 

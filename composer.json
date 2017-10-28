@@ -16,7 +16,9 @@
     ],
     "minimum-stability": "stable",
     "autoload": {
-        "files": ["lib/Currency.php"]
+        "psr-4": {
+            "Util\\": "src"
+        }
     },
     "require": {
         "php": ">=5.5"
