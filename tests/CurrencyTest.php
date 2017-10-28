@@ -1,11 +1,5 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
-
-if (!class_exists('\PHPUnit\Framework\TestCase') && class_exists('\PHPUnit_Framework_TestCase')) {
-    class_alias('\PHPUnit_Framework_TestCase', '\PHPUnit\Framework\TestCase');
-}
-
 class CurrencyTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -29,17 +23,15 @@ class CurrencyTest extends \PHPUnit_Framework_TestCase
         );
 
         foreach ($amounts AS $amount => $translation) {
-            $this->assertEquals($translation['bg'], Currency::normalize($amount, Currency::LANG_BG));
-            $this->assertEquals($translation['en'], Currency::normalize($amount, Currency::LANG_EN));
+            $this->assertEquals($translation['bg'], Currency::convertToText($amount, Currency::LANG_BG));
+            $this->assertEquals($translation['en'], Currency::convertToText($amount, Currency::LANG_EN));
         }
     }
-
-    /**
-     * @expectedException InvalidArgumentException
-     */
+    
     public function testCurrencyException()
     {
-        Currency::normalize(1.03, 'es');
+        $this->setExpectedException('\InvalidArgumentException');
+        Currency::convertToText(1.03, 'es');
     }
 
 }
